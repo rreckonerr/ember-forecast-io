@@ -1,17 +1,11 @@
-# Ember-forecast-io
+# Ember Forecast.io
 
-This README outlines the details of collaborating on this Ember addon.
+Ember addon for requesting weather forecasts from [forecast.io](http://forecast.io).
 
 ## Installation
 
-* `git clone` this repository
-* `npm install`
-* `bower install`
+`ember install ember-forecast-io`
 
-## Running
-
-* `ember server`
-* Visit your app at http://localhost:4200.
 
 ## Running Tests
 
