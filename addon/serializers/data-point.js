@@ -5,5 +5,5 @@ export default DS.RESTSerializer.extend({
     resourceHash.id = resourceHash.time;
 
     return this._super(modelClass, resourceHash, prop);
-  },
+  }
 });
