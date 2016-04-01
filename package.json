@@ -1,7 +1,7 @@
 {
   "name": "ember-forecast-io",
   "version": "0.0.0",
-  "description": "The default blueprint for ember-cli addons.",
+  "description": "Ember Forecast.io addon",
   "directories": {
     "doc": "doc",
     "test": "tests"
@@ -40,7 +40,11 @@
     "loader.js": "^4.0.1"
   },
   "keywords": [
-    "ember-addon"
+    "ember-addon",
+    "weather",
+    "forecast",
+    "forecast.io",
+    "darksky"
   ],
   "dependencies": {
     "ember-cli-babel": "^5.1.6"
