@@ -1,6 +1,6 @@
 {
   "name": "ember-forecast-io",
-  "version": "0.0.0",
+  "version": "1.0.0-beta.1",
   "description": "Ember Forecast.io addon",
   "directories": {
     "doc": "doc",
