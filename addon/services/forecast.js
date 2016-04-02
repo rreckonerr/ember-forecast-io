@@ -29,14 +29,14 @@ export default Ember.Service.extend({
   // Request weather forecast at specific location.
   forecast(latitude, longitude) {
     let id = `${latitude},${longitude}`;
-    return this.get('store').findRecord('forecast-io/forecast', id);
+    return this.get('store').findRecord('ember-forecast-io/forecast', id);
   },
 
   // @public
   // Request weather forecast at specific location at point in time.
   forecastAt(latitude, longitude, date) {
     let id = `${latitude},${longitude},${date.getTime() / 1000}`;
-    return this.get('store').findRecord('forecast-io/forecast', id);
+    return this.get('store').findRecord('ember-forecast-io/forecast', id);
   },
 
   // @private
@@ -58,7 +58,7 @@ export default Ember.Service.extend({
     let store = this.get('store');
 
     for (let modelName of ['forecast', 'data-block', 'data-point']) {
-      store.unloadAll(`forecast-io/${modelName}`);
+      store.unloadAll(`ember-forecast-io/${modelName}`);
     }
   })
 });
