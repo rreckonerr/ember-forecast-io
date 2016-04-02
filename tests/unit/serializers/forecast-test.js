@@ -1,15 +1,22 @@
-import { moduleForModel, test } from 'ember-qunit';
+/* jshint expr:true */
+import { expect } from 'chai';
+import { describeModel, it } from 'ember-mocha';
 
-moduleForModel('forecast', 'Unit | Serializer | forecast', {
-  // Specify the other units that are required for this test.
-  needs: ['serializer:forecast']
-});
+describeModel(
+  'forecast',
+  'Unit | Serializer | forecast',
+  {
+    // Specify the other units that are required for this test.
+    needs: ['serializer:forecast']
+  },
+  function() {
+    // Replace this with your real tests.
+    it('serializes records', function() {
+      let record = this.subject();
 
-// Replace this with your real tests.
-test('it serializes records', function(assert) {
-  let record = this.subject();
+      let serializedRecord = record.serialize();
 
-  let serializedRecord = record.serialize();
-
-  assert.ok(serializedRecord);
-});
+      expect(serializedRecord).to.be.ok;
+    });
+  }
+);
