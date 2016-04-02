@@ -10,7 +10,11 @@ describeModule(
   'ForecastService',
   {
     // Specify the other units that are required for this test.
-    // needs: ['service:foo']
+    needs: [
+      'model:ember-forecast-io/data-block',
+      'model:ember-forecast-io/data-point',
+      'model:ember-forecast-io/forecast'
+    ]
   },
   function() {
     // Replace this with your real tests.

@@ -3,11 +3,14 @@ import { expect } from 'chai';
 import { describeModel, it } from 'ember-mocha';
 
 describeModel(
-  'data-block',
+  'ember-forecast-io/data-block',
   'Unit | Serializer | data block',
   {
     // Specify the other units that are required for this test.
-    needs: ['serializer:data-block']
+    needs: [
+      'serializer:ember-forecast-io/data-block',
+      'model:ember-forecast-io/data-point'
+    ]
   },
   function() {
     // Replace this with your real tests.

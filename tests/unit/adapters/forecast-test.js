@@ -3,7 +3,7 @@ import { expect } from 'chai';
 import { describeModule, it } from 'ember-mocha';
 
 describeModule(
-  'adapter:forecast',
+  'adapter:ember-forecast-io/forecast',
   'Unit | Adapter | forecast',
   {
     // Specify the other units that are required for this test.

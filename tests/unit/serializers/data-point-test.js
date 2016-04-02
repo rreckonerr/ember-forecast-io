@@ -3,11 +3,14 @@ import { expect } from 'chai';
 import { describeModel, it } from 'ember-mocha';
 
 describeModel(
-  'data-point',
+  'ember-forecast-io/data-point',
   'Unit | Serializer | data point',
   {
     // Specify the other units that are required for this test.
-    needs: ['serializer:data-point']
+    needs: [
+      'serializer:ember-forecast-io/data-point',
+      'transform:ember-forecast-io/unix-timestamp'
+    ]
   },
   function() {
     // Replace this with your real tests.

@@ -42,11 +42,7 @@ export default Ember.Service.extend({
   // @private
   _initDefaults: on('init', function() {
     let ENV = getOwner(this)._lookupFactory('config:environment');
-    let config = ENV['ember-forecast-io'] || {};
-
-    if (config.host == null) {
-      warn(`ember-forecast-io did not find a host setting, default to ${DEFAULTS.host}`, false, { id: 'ember-forecast-io.host' });
-    }
+    let config = ENV && ENV['ember-forecast-io'] || {};
 
     for (let property of ['units', 'lang', 'host']) {
       this.set(property, getWithDefault(config, property, DEFAULTS[property]));

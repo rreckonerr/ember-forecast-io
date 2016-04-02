@@ -3,11 +3,14 @@ import { expect } from 'chai';
 import { describeModel, it } from 'ember-mocha';
 
 describeModel(
-  'forecast',
+  'ember-forecast-io/forecast',
   'Unit | Model | forecast',
   {
     // Specify the other units that are required for this test.
-      needs: []
+    needs: [
+      'model:ember-forecast-io/data-block',
+      'model:ember-forecast-io/data-point'
+    ]
   },
   function() {
     // Replace this with your real tests.
