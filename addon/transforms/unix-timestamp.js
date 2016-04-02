@@ -2,10 +2,10 @@ import DS from 'ember-data';
 
 export default DS.Transform.extend({
   deserialize(serialized) {
-    return new Date(serialized * 1000);
+    return serialized ? new Date(serialized * 1000) : null;
   },
 
   serialize(deserialized) {
-    return deserialized.getTime() / 1000;
+    return deserialized ? deserialized.getTime() / 1000 : null;
   }
 });

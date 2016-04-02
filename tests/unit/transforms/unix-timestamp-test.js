@@ -23,6 +23,11 @@ describeModule(
         let unixTimestamp = date.getTime() / 1000;
         expect(transform.deserialize(unixTimestamp)).to.be.eql(date);
       });
+
+      it('returns null if no timestamp is given', function() {
+        let transform = this.subject();
+        expect(transform.deserialize(null)).to.be.eq(null);
+      });
     });
 
     describe('serialize', function() {
@@ -36,6 +41,11 @@ describeModule(
         let date = new Date();
         let unixTimestamp = date.getTime() / 1000;
         expect(transform.serialize(date)).to.be.eq(unixTimestamp);
+      });
+
+      it('returns null if no date is given', function() {
+        let transform = this.subject();
+        expect(transform.serialize(null)).to.be.eq(null);
       });
     });
   }
