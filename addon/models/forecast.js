@@ -1,14 +1,20 @@
 import DS from 'ember-data';
 
-export default DS.Model.extend({
-  latitude: DS.attr('number'),
-  longitude: DS.attr('number'),
-  timezone: DS.attr('string'),
-  offset: DS.attr('number'),
+const {
+  attr,
+  belongsTo,
+  Model
+} = DS;
 
-  currently: DS.belongsTo('forecast-io/data-point'),
-  hourly: DS.belongsTo('forecast-io/data-block'),
-  daily: DS.belongsTo('forecast-io/data-block'),
-  alerts: DS.attr(),
-  flags: DS.attr()
+export default Model.extend({
+  latitude: attr('number'),
+  longitude: attr('number'),
+  timezone: attr('string'),
+  offset: attr('number'),
+
+  currently: belongsTo('forecast-io/data-point'),
+  hourly: belongsTo('forecast-io/data-block'),
+  daily: belongsTo('forecast-io/data-block'),
+  alerts: attr(),
+  flags: attr()
 });

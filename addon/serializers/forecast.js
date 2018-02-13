@@ -1,6 +1,11 @@
 import DS from 'ember-data';
 
-export default DS.RESTSerializer.extend(DS.EmbeddedRecordsMixin, {
+const {
+  EmbeddedRecordsMixin,
+  RESTSerializer
+} = DS;
+
+export default RESTSerializer.extend(EmbeddedRecordsMixin, {
   attrs: {
     currently: {
       serialize: false,

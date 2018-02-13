@@ -1,7 +1,13 @@
 import DS from 'ember-data';
 
-export default DS.Model.extend({
-  summary: DS.attr('string'),
-  icon: DS.attr('string'),
-  dataPoints: DS.hasMany('forecast-io/data-point')
+const {
+  attr,
+  hasMany,
+  Model
+} = DS;
+
+export default Model.extend({
+  summary: attr('string'),
+  icon: attr('string'),
+  dataPoints: hasMany('forecast-io/data-point')
 });

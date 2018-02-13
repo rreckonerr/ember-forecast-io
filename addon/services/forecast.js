@@ -1,17 +1,18 @@
-import Ember from 'ember';
-import getOwner from 'ember-getowner-polyfill';
-
-const { on, observer, warn, getWithDefault } = Ember;
+import Service, { inject as service } from '@ember/service';
+import { on } from '@ember/object/evented';
+import { warn } from '@ember/debug';
+import { getWithDefault, observer } from '@ember/object';
+import { getOwner } from '@ember/application';
 
 const DEFAULTS = {
-  units:  'us',
-  lang:   'en',
-  host:   'http://localhost/forecast'
+  units: 'us',
+  lang: 'en',
+  host: 'http://localhost/forecast'
 };
 
-export default Ember.Service.extend({
+export default Service.extend({
   // Service
-  store: Ember.inject.service(),
+  store: service(),
 
   // @public
   // The Forecast.io proxy host.
@@ -41,7 +42,7 @@ export default Ember.Service.extend({
 
   // @private
   _initDefaults: on('init', function() {
-    let ENV = getOwner(this)._lookupFactory('config:environment');
+    let ENV = getOwner(this).resolveRegistration('config:environment');
     let config = ENV['ember-forecast-io'] || {};
 
     if (config.host == null) {

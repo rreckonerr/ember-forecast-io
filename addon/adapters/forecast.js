@@ -1,10 +1,16 @@
-import Ember from 'ember';
+import $ from 'jquery';
+import { alias } from '@ember/object/computed';
+import { inject as service } from '@ember/service';
 import DS from 'ember-data';
 
-export default DS.RESTAdapter.extend({
-  forecast: Ember.inject.service(),
+const {
+  RESTAdapter
+} = DS;
 
-  host: Ember.computed.alias('forecast.host'),
+export default RESTAdapter.extend({
+  forecast: service(),
+
+  host: alias('forecast.host'),
 
   pathForType() {
     return null;
@@ -18,6 +24,6 @@ export default DS.RESTAdapter.extend({
       lang: this.get('forecast.lang')
     };
 
-    return `${url}?${Ember.$.param(query)}`;
+    return `${url}?${$.param(query)}`;
   }
 });

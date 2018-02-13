@@ -2,7 +2,9 @@ import { moduleFor, test } from 'ember-qunit';
 
 moduleFor('service:forecast', 'Unit | Service | forecast', {
   // Specify the other units that are required for this test.
-  // needs: ['service:foo']
+  needs: [
+    'config:environment'
+  ]
 });
 
 // Replace this with your real tests.
