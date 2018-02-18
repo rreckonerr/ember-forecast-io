@@ -1,6 +1,6 @@
 import { moduleForModel, test } from 'ember-qunit';
 
-moduleForModel('data-block', 'Unit | Model | data block', {
+moduleForModel('forecast-io/data-block', 'Unit | Model | data block', {
   // Specify the other units that are required for this test.
   needs: []
 });

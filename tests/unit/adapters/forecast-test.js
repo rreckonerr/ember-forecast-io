@@ -1,8 +1,10 @@
 import { moduleFor, test } from 'ember-qunit';
 
-moduleFor('adapter:forecast', 'Unit | Adapter | forecast', {
+moduleFor('adapter:forecast-io/forecast', 'Unit | Adapter | forecast', {
   // Specify the other units that are required for this test.
-  // needs: ['serializer:foo']
+  needs: [
+    'service:forecast'
+  ]
 });
 
 // Replace this with your real tests.

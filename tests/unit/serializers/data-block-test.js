@@ -1,8 +1,12 @@
 import { moduleForModel, test } from 'ember-qunit';
 
-moduleForModel('data-block', 'Unit | Serializer | data block', {
+moduleForModel('forecast-io/data-block', 'Unit | Serializer | data block', {
   // Specify the other units that are required for this test.
-  needs: ['serializer:data-block']
+  needs: [
+    'model:forecast-io/data-point',
+    'serializer:forecast-io/data-block',
+    'transform:unix-timestamp'
+  ]
 });
 
 // Replace this with your real tests.
