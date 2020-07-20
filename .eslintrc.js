@@ -3,21 +3,21 @@ module.exports = {
   parser: 'babel-eslint',
   parserOptions: {
     ecmaVersion: 2018,
-    sourceType: 'module'
+    sourceType: 'module',
+    ecmaFeatures: { 
+      legacyDecorators: true 
+    }
   },
-  plugins: [
-    'ember'
-  ],
+  plugins: ['ember'],
   extends: [
-    'eslint:recommended',
     'plugin:ember/recommended'
   ],
   env: {
     'browser': true
   },
   rules: {
+    'ember/use-ember-data-rfc-395-imports': false,
     'strict': 0,
-    'ember-suave/require-access-in-comments': 0,
     'no-unused-vars': 'error',
     'no-dupe-keys': 'error'
   },
