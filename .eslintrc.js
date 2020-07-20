@@ -2,11 +2,15 @@ module.exports = {
   root: true,
   parser: 'babel-eslint',
   parserOptions: {
-    ecmaVersion: 7,
+    ecmaVersion: 2018,
     sourceType: 'module'
   },
+  plugins: [
+    'ember'
+  ],
   extends: [
-    'plugin:ember-suave/recommended'
+    'eslint:recommended',
+    'plugin:ember/recommended'
   ],
   env: {
     'browser': true
@@ -16,5 +20,37 @@ module.exports = {
     'ember-suave/require-access-in-comments': 0,
     'no-unused-vars': 'error',
     'no-dupe-keys': 'error'
-  }
+  },
+  overrides: [
+    // node files
+    {
+      files: [
+        '.eslintrc.js',
+        '.template-lintrc.js',
+        'ember-cli-build.js',
+        'index.js',
+        'testem.js',
+        'blueprints/*/index.js',
+        'config/**/*.js',
+        'tests/dummy/config/**/*.js'
+      ],
+      excludedFiles: [
+        'addon/**',
+        'addon-test-support/**',
+        'app/**',
+        'tests/dummy/app/**'
+      ],
+      parserOptions: {
+        sourceType: 'script'
+      },
+      env: {
+        browser: false,
+        node: true
+      },
+      plugins: ['node'],
+      rules: Object.assign({}, require('eslint-plugin-node').configs.recommended.rules, {
+        // add your custom rules and overrides for node files here
+      })
+    }
+  ]
 };
