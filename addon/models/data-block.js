@@ -15,6 +15,6 @@ export default class DataBlockModel extends Model {
   @attr('string')
   icon;
 
-  @hasMany('forecast-io/data-point')
+  @hasMany('forecast-io/data-point', { async: false })
   dataPoints;
 }

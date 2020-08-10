@@ -21,13 +21,13 @@ export default class ForecastModel extends Model {
   @attr('number')
   offset;
 
-  @belongsTo('forecast-io/data-point')
+  @belongsTo('forecast-io/data-point', { async: false })
   currently;
 
-  @belongsTo('forecast-io/data-block')
+  @belongsTo('forecast-io/data-block', { async: false })
   hourly;
 
-  @belongsTo('forecast-io/data-block')
+  @belongsTo('forecast-io/data-block', { async: false })
   daily;
 
   @attr()
